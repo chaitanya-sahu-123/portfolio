@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaitanya Sahu — Software Engineer</title>
+<meta name="description" content="Portfolio of Chaitanya Sahu — software engineer specializing in backend engineering, distributed systems, and Full-Stack Development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="scanline" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">CS</span>
+      <span class="brand-name">Chaitanya Sahu<span class="cursor">_</span></span>
+    </a>
+
+    <nav class="tabs" aria-label="Primary">
+      <a href="#projects" class="tab"><span class="tab-idx">01</span>projects</a>
+      <a href="#stack" class="tab"><span class="tab-idx">02</span>tech stack</a>
+      <a href="#experience" class="tab"><span class="tab-idx">03</span>experience</a>
+      <a href="#research" class="tab"><span class="tab-idx">04</span>research</a>
+      <a href="#contact" class="tab"><span class="tab-idx">05</span>contact</a>
+    </nav>
+
+    <div class="status-pill">
+      <span class="dot dot-live"></span>
+      <span class="status-text">open_to_work</span>
+      <span class="status-sep">·</span>
+      <span class="uptime" id="uptime">00:00:00</span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="service-tag">
+          <span class="dot dot-live"></span>
+          service: <strong>chaitanya-sahu-portfolio</strong>&nbsp;·&nbsp;region: Hyd-1&nbsp;·&nbsp;status: Healthy
+        </div>
+
+        <h1 class="headline">
+          I build backend systems
+          that<br> don't fall over<span class="accent-dot">.</span>
+        </h1>
+
+        <p class="sub">
+          Computer Science undergraduate (2026 grad) with a 6 month internship experience building reliable systems that are
+          production-ready, not just functional. Core stack: Node.js, Express,
+          React, Java, Spring Boot, REST APIs, Redis, and Docker with system design
+          as the throughline across every project. Currently looking for <strong>full-time
+          Software Engineer, Backend Engineer, Full-Stack, and DevOps roles</strong>.
+        </p>
+
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="assets/Chaitanya_Sahu_Resume_EA.pdf" class="btn btn-ghost" download>Download Resume</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+
+        <dl class="hero-stats">
+          <div>
+            <dt>Experience</dt>
+            <dd>6&nbsp;months · Smarsh, Bengaluru · Software Engineer Intern</dd>
+          </div>
+          <div>
+            <dt>cgpa</dt>
+            <dd>9.01 / 10</dd>
+          </div>
+          <div>
+            <dt>problems solved</dt>
+            <dd>1000+</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Signature element: live multi-project demo panel -->
+      <div class="hero-panel" aria-label="Live demo panel, cycles through projects">
+        <div class="panel-head">
+          <span class="panel-title" id="panel-title">rate-limiter</span>
+          <span class="panel-tag" id="panel-tag">c++17 · self-built</span>
+        </div>
+
+        <div class="panel-tabs" id="panel-tabs" role="tablist" aria-label="Select project demo">
+          <button class="panel-tab is-active" data-project="rate-limiter" role="tab" aria-selected="true">rate-limiter</button>
+          <button class="panel-tab" data-project="complyvault" role="tab" aria-selected="false">complyvault</button>
+          <button class="panel-tab" data-project="chatapp" role="tab" aria-selected="false">chatapp</button>
+          <button class="panel-tab" data-project="weather-guard" role="tab" aria-selected="false">weather-guard</button>
+        </div>
+
+        <canvas id="stream-canvas" width="480" height="220" aria-hidden="true"></canvas>
+
+        <div class="panel-metrics" id="panel-metrics">
+          <div class="metric">
+            <span class="metric-label" id="metric-a-label">in-memory throughput</span>
+            <span class="metric-value" id="metric-a-value">0</span>
+            <span class="metric-unit" id="metric-a-unit">req/sec</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label" id="metric-b-label">redis-backed · 64 threads</span>
+            <span class="metric-value" id="metric-b-value">0</span>
+            <span class="metric-unit" id="metric-b-unit">req/sec</span>
+          </div>
+        </div>
+        <div class="panel-foot" id="panel-foot">token-bucket algorithm · sliding window fallback · zero dropped requests under test load</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ projects / PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="section-head">
+      <span class="section-idx">01</span>
+      <h2>projects</h2>
+      <p class="section-sub">Check out my projects!</p>
+    </div>
+
+    <div class="service-grid">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="dot dot-live"></span>
+          <h3>complyVault</h3>
+          <span class="card-status">healthy</span>
+        </div>
+        <p class="card-desc">Spring Boot compliance pipeline for archiving and retrieving communications data.
+          Messages move through ingestion → validation → normalization → deduplication → storage → policy
+          engine → flagged review, with audit logging at every step.</p>
+        <div class="card-tags">
+          <span>spring boot</span><span>kafka</span><span>elasticsearch</span><span>mongodb</span><span>postgresql</span>
+        </div>
+        <a class="card-link" href="https://github.com/chaitanya-sahu-123/complyVault" target="_blank" rel="noopener">view repo →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="dot dot-live"></span>
+          <h3>rate-limiter-cpp</h3>
+          <span class="card-status">healthy</span>
+        </div>
+        <p class="card-desc">Fixed-window rate limiter in modern C++17 with two benchmarked backends: a
+          lock-striped in-memory map (~6.5M req/sec) and a Redis-atomic distributed version (~66K req/sec)
+          — built specifically to measure the trade-off between the two, not just pick one.</p>
+        <div class="card-tags">
+          <span>c++17</span><span>redis</span><span>multithreading</span><span>benchmarking</span>
+        </div>
+        <a class="card-link" href="https://github.com/chaitanya-sahu-123/rate-limiter-cpp" target="_blank" rel="noopener">view repo →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="dot dot-live"></span>
+          <h3>chatapp</h3>
+          <span class="card-status">healthy</span>
+        </div>
+        <p class="card-desc">Full-stack one-on-one chat application built on websockets, with separate
+          frontend and backend projects — deployed and reachable live, not just a local demo.</p>
+        <div class="card-tags">
+          <span>websockets</span><span>node.js</span><span>full-stack</span>
+        </div>
+        <a class="card-link" href="https://github.com/chaitanya-sahu-123/ChatApp" target="_blank" rel="noopener">view repo →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="dot dot-live"></span>
+          <h3>event-weather-guard</h3>
+          <span class="card-status">healthy</span>
+        </div>
+        <p class="card-desc">"Will it rain during my event?" — a deterministic weather-risk API. Given a
+          location and time window, it classifies an event Safe / Risky / Unsafe with a 0–100 severity score
+          and an explanation of exactly which rule fired and why.</p>
+        <div class="card-tags">
+          <span>node.js</span><span>express</span><span>docker</span><span>open-meteo API</span>
+        </div>
+        <a class="card-link" href="https://github.com/chaitanya-sahu-123/Event-Weather-Guard" target="_blank" rel="noopener">view repo →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="dot dot-live"></span>
+          <h3>studenthub</h3>
+          <span class="card-status">healthy</span>
+        </div>
+        <p class="card-desc">Full-stack student platform with a React frontend and a Node/Express backend,
+          iterated over 160+ commits — the longest-running of my side projects.</p>
+        <div class="card-tags">
+          <span>react</span><span>node.js</span><span>express</span><span>full-stack</span>
+        </div>
+        <a class="card-link" href="https://github.com/chaitanya-sahu-123/StudentHub" target="_blank" rel="noopener">view repo →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="dot dot-amber"></span>
+          <h3>speech2swallow</h3>
+          <span class="card-status card-status-amber">research</span>
+        </div>
+        <p class="card-desc">RAG-based assistant for speech and swallowing difficulty analysis in head &amp; neck
+          cancer patients — the applied system behind a peer-reviewed Springer LNCS paper (see research below).</p>
+        <div class="card-tags">
+          <span>LangChain</span><span>RAG</span><span>Audio Processing</span><span>GPT</span>
+        </div>
+        <a class="card-link" href="https://github.com/chaitanya-sahu-123/QoL-in-head-and-neck-cancer-patients-Multimodal-implementation" target="_blank" rel="noopener">view repo →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ STACK ============ -->
+  <section id="stack" class="section section-alt">
+    <div class="section-head">
+      <span class="section-idx">02</span>
+      <h2>Tech Stack</h2>
+      <p class="section-sub">Tech Stack I've worked on till now!</p>
+    </div>
+
+    <div class="topic-list" id="topic-list">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section">
+    <div class="section-head">
+      <span class="section-idx">03</span>
+      <h2>Experience</h2>
+      <p class="section-sub"></p>
+    </div>
+
+    <div class="log-stream">
+
+      <div class="log-entry">
+        <div class="log-time">Aug 2025 — Jan 2026</div>
+        <div class="log-body">
+          <div class="log-title">Software Engineer Intern <span class="log-badge log-badge-live">Recent</span></div>
+          <div class="log-org">Smarsh · Bengaluru, India</div>
+          <div class="log-desc">
+            Developed scalable, event-driven backend services with Java and Spring Boot, leveraging Kafka for asynchronous processing and AWS for cloud storage. Built data-intensive applications using MongoDB, PostgreSQL, Redis, and Elasticsearch, with Docker, Jenkins, Argo CD, and Datadog supporting deployment and production operations.
+          </div>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-time">Nov 2022 — Jun 2026</div>
+        <div class="log-body">
+          <div class="log-title">B.Tech, Computer Science &amp; Engineering <span class="log-badge log-badge-live">graduated</span></div>
+          <div class="log-org">CMR College of Engineering &amp; Technology · Hyderabad, India</div>
+          <div class="log-desc">CGPA 9.01 / 10. Coursework and independent projects centered on distributed
+            systems, algorithms, and applied ML, several of which now live in the projects above.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH + COMPETITIVE PROGRAMMING ============ -->
+  <section id="research" class="section section-alt">
+    <div class="section-head">
+      <span class="section-idx">04</span>
+      <h2>Research &amp; Competitive Programming</h2>
+      
+    </div>
+
+    <div class="split-grid">
+
+      <div class="paper-card">
+        <div class="panel-head">
+          <span class="panel-title">Springer · lncs</span>
+          <span class="panel-tag">Corresponding Author</span>
+        </div>
+        <h3 class="paper-title">Speech &amp; Swallowing Difficulty Analysis in Head &amp; Neck Cancer Patients</h3>
+        <p class="card-desc">Academic Research paper to be published in Springer's Lecture Notes in Computer Science
+          series, co-authored as corresponding author. Explores applied NLP/ML methods for analyzing
+          speech and swallowing impairment in head &amp; neck cancer patients using audio samples, later extended into the
+          Speech2Swallow system above.</p>
+        <a class="card-link" href="#" target="_blank" rel="noopener">view paper (To be updated soon) →</a>
+      </div>
+
+      <div class="cp-card">
+        <div class="panel-head">
+          <span class="panel-title">CP Ratings</span>
+          <span class="panel-tag">live-ish</span>
+        </div>
+
+        <div class="rating-row">
+          <div class="rating-name">Codeforces</div>
+          <div class="rating-bar"><div class="rating-fill" style="width:62%"></div></div>
+          <div class="rating-value">1417 <span>Specialist</span></div>
+        </div>
+        <div class="rating-row">
+          <div class="rating-name">CodeChef</div>
+          <div class="rating-bar"><div class="rating-fill rating-fill-amber" style="width:70%"></div></div>
+          <div class="rating-value">1614 <span>3★</span></div>
+        </div>
+
+        <div class="panel-metrics panel-metrics-solo">
+          <div class="metric">
+            <span class="metric-label">problems solved, across platforms</span>
+            <span class="metric-value" id="metric-solved">0</span>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact-section">
+    <div class="section-head">
+      <span class="section-idx">05</span>
+      <h2>Contact</h2>
+      <p class="section-sub">Feel free to reach out!</p>
+    </div>
+
+    <div class="config-panel">
+      <div class="config-line"><span class="config-key">email</span><span class="config-colon">:</span><a href="mailto:chaitanya.sahu666@gmail.com">chaitanya.sahu666@gmail.com</a></div>
+      <div class="config-line"><span class="config-key">github</span><span class="config-colon">:</span><a href="https://github.com/chaitanya-sahu-123" target="_blank" rel="noopener">github.com/chaitanya-sahu-123</a></div>
+      <div class="config-line"><span class="config-key">linkedin</span><span class="config-colon">:</span><a href="https://www.linkedin.com/in/chaitanya-sahu-741956255/" target="_blank" rel="noopener">linkedin.com/in/chaitanya-sahu-741956255</a></div>
+      <div class="config-line"><span class="config-key">location</span><span class="config-colon">:</span><span>Hyderabad, India</span></div>
+      <div class="config-line"><span class="config-key">resume</span><span class="config-colon">:</span><a href="assets/Chaitanya_Sahu_Resume_EA.pdf" download>resume.pdf</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span><b>© 2026 Chaitanya Sahu · Built with html, css, vanilla JavaScript. No frameworks used.</b></span>
+  <a href="#top"><b>back to top ↑</b></a>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
