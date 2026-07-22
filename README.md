@@ -1,4 +1,4 @@
-# chaitanya — portfolio
+# Chaitanya Sahu — Portfolio
 
 A single-page portfolio site styled as a systems dashboard: service cards for
 projects, a Kafka-style topic list for the stack, a log stream for experience,
