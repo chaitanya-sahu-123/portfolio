@@ -166,8 +166,28 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; font-weight: 600; }
   white-space: nowrap;
 }
 .status-text { color: var(--accent-teal); }
+.status-text[role="button"] {
+  cursor: pointer;
+  user-select: none;
+}
+.status-text[role="button"]:focus-visible {
+  outline: 1px dashed var(--accent-amber);
+  outline-offset: 3px;
+}
 .status-sep { color: var(--text-faint); }
 .uptime { color: var(--text-dim); min-width: 62px; }
+
+.status-pill.is-jiggling {
+  animation: statusJiggle 360ms ease;
+}
+
+@keyframes statusJiggle {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-1px) rotate(-1deg); }
+  45% { transform: translateX(2px) rotate(1deg); }
+  70% { transform: translateX(-1px) rotate(-0.6deg); }
+  100% { transform: translateX(0) rotate(0); }
+}
 
 @media (max-width: 860px) {
   .tabs { display: none; }

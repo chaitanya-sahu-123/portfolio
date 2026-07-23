@@ -84,6 +84,56 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 })();
 
 /* =========================================================
+   1.5. open_to_work click easter egg
+   ========================================================= */
+(function openToWorkEasterEgg() {
+  const statusEl = document.getElementById('open-to-work');
+  if (!statusEl) return;
+
+  const statusPill = statusEl.closest('.status-pill');
+  const messages = [
+    'open_to_work',
+    'open_to_debugging_at_2am',
+    'open_to_coffee-powered_commits',
+    'open_to_fixing_production_before_it_panics',
+    'open_to_turning_it_off_and_on_again',
+  ];
+  let index = 0;
+  let resetTimer = null;
+
+  function setMessage(nextIndex) {
+    statusEl.textContent = messages[nextIndex];
+  }
+
+  function poke() {
+    index = (index + 1) % messages.length;
+    setMessage(index);
+
+    if (statusPill && !REDUCE_MOTION) {
+      statusPill.classList.remove('is-jiggling');
+      void statusPill.offsetWidth;
+      statusPill.classList.add('is-jiggling');
+    }
+
+    clearTimeout(resetTimer);
+    resetTimer = window.setTimeout(() => {
+      index = 0;
+      setMessage(index);
+    }, 3200);
+  }
+
+  statusEl.addEventListener('click', poke);
+  statusEl.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      poke();
+    }
+  });
+
+  window.addEventListener('pagehide', () => clearTimeout(resetTimer), { once: true });
+})();
+
+/* =========================================================
    2. Animated metric counters
    ========================================================= */
 function animateCount(el, target, opts = {}) {
