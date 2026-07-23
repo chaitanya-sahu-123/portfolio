@@ -4,6 +4,67 @@
 const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* =========================================================
+   0. Hero headline rotator
+   ========================================================= */
+(function heroHeadlineRotator() {
+  const phraseEl = document.getElementById('headline-phrase');
+  if (!phraseEl) return;
+
+  const phrases = [
+    "don't fall over",
+    'are fast & reliable',
+    'scale in production',
+    'are maintainable',
+  ];
+  const typeSpeed = 55;
+  const backspaceSpeed = 32;
+  const holdSpeed = 1400;
+  let stop = false;
+
+  function sleep(ms) {
+    return new Promise(resolve => window.setTimeout(resolve, ms));
+  }
+
+  function setPhrase(text) {
+    phraseEl.textContent = text;
+  }
+
+  async function typeText(text) {
+    for (let i = 1; i <= text.length && !stop; i++) {
+      setPhrase(text.slice(0, i));
+      await sleep(typeSpeed);
+    }
+  }
+
+  async function backspaceText(text) {
+    for (let i = text.length; i >= 0 && !stop; i--) {
+      setPhrase(text.slice(0, i));
+      await sleep(backspaceSpeed);
+    }
+  }
+
+  async function run() {
+    let current = phrases[0];
+    setPhrase(current);
+    while (!stop) {
+      await sleep(holdSpeed);
+      const next = phrases[(phrases.indexOf(current) + 1) % phrases.length];
+      await backspaceText(current);
+      if (stop) return;
+      await sleep(120);
+      await typeText(next);
+      current = next;
+    }
+  }
+
+  if (REDUCE_MOTION) return;
+
+  run();
+
+  window.addEventListener('pagehide', () => { stop = true; }, { once: true });
+})();
+
+/* =========================================================
    1. Uptime clock — ticks up from page load
    ========================================================= */
 (function uptime() {
@@ -502,9 +563,9 @@ if (cpCard) {
    4. Stack / topic list — rendered from data
    ========================================================= */
 const TOPICS = [
-  { name: 'Languages', items: ['Java', 'C++', 'JavaScript', 'Python'], partitions: 4 },
+  { name: 'Languages', items: ['Java', 'C++', 'JavaScript', 'Python'], partitions: 5 },
 
-  { name: 'Backend', items: ['Spring Boot', 'Node.js', 'Express.js', 'Microservices', 'REST APIs'], partitions: 4 },
+  { name: 'Backend', items: ['Spring Boot', 'Node.js', 'Express.js', 'Microservices', 'REST APIs'], partitions: 5 },
 
   { name: 'Frontend', items: ['React', 'HTML', 'CSS', 'Tailwind CSS'], partitions: 4 },
 
@@ -516,7 +577,7 @@ const TOPICS = [
 
   { name: 'Monitoring & Observability', items: ['Datadog'], partitions: 3 },
 
-  { name: 'Tools', items: ['Git', 'Linux', 'Maven', 'Postman'], partitions: 4 },
+  { name: 'Tools', items: ['Git', 'Linux', 'Maven', 'Postman'], partitions: 5 },
 ];
 
 (function renderTopics() {
