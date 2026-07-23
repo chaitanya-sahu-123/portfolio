@@ -90,7 +90,7 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   const statusEl = document.getElementById('open-to-work');
   if (!statusEl) return;
 
-  const statusPill = statusEl.closest('.status-pill');
+  const statusPill = statusEl;
   const messages = [
     'open_to_work',
     'open_to_debugging_at_2am',
@@ -102,7 +102,10 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   let resetTimer = null;
 
   function setMessage(nextIndex) {
-    statusEl.textContent = messages[nextIndex];
+    const statusText = statusEl.querySelector('.status-text');
+    if (statusText) {
+      statusText.textContent = messages[nextIndex];
+    }
   }
 
   function poke() {

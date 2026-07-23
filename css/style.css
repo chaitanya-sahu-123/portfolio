@@ -1,6 +1,4 @@
-/* ==========================================================================
-   TOKENS
-   ========================================================================== */
+
 :root {
   --bg-deep:        #0A0C10;
   --bg-panel:       #12151D;
@@ -165,14 +163,28 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; font-weight: 600; }
   border-radius: 20px;
   white-space: nowrap;
 }
-.status-text { color: var(--accent-teal); }
-.status-text[role="button"] {
+.status-pill-button {
+  background: transparent;
+  border: 1px solid;
+  color: var(--accent-amber);
   cursor: pointer;
-  user-select: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
 }
-.status-text[role="button"]:focus-visible {
+.status-pill-button:hover {
+  border-color: var(--accent-teal);
+  background: rgba(79, 209, 197, 0.05);
+  transform: translateY(-1px);
+}
+.status-pill-button:focus-visible {
   outline: 1px dashed var(--accent-amber);
   outline-offset: 3px;
+}
+.status-text { color: var(--accent-teal); }
+.status-hint {
+  color: var(--text-faint);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 .status-sep { color: var(--text-faint); }
 .uptime { color: var(--text-dim); min-width: 62px; }
