@@ -12,9 +12,9 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 
   const phrases = [
     "don't fall over",
-    'are fast & reliable',
-    'scale in production',
-    'are maintainable',
+    'are reliable',
+    'scale with ease',
+    'handle the load',
   ];
   const typeSpeed = 55;
   const backspaceSpeed = 32;
@@ -122,7 +122,7 @@ const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matc
     resetTimer = window.setTimeout(() => {
       index = 0;
       setMessage(index);
-    }, 3200);
+    }, 4200);
   }
 
   statusEl.addEventListener('click', poke);

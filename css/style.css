@@ -234,7 +234,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; font-weight: 600; }
 .service-tag strong { color: var(--text-primary); font-weight: 600; }
 
 .headline {
-  font-size: 46px;
+  font-size: 44px;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--text-primary);
@@ -244,6 +244,7 @@ h1, h2, h3 { font-family: var(--font-mono); margin: 0; font-weight: 600; }
   align-items: baseline;
   gap: 0;
   white-space: nowrap;
+  min-width: 16ch;
 }
 .headline-phrase {
   display: inline-block;
